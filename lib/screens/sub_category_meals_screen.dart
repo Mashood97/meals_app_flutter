@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/category_meal_widget.dart';
 import '../models/dummy_categories.dart';
 
 class SubCategoryMealsScreen extends StatelessWidget {
@@ -23,7 +24,14 @@ class SubCategoryMealsScreen extends StatelessWidget {
         ),
         body: ListView.builder(
           itemBuilder: (ctx, index) {
-            return Text(filteredCategoryItems[index].title);
+            return CategoryMealWidget(
+              mealId: filteredCategoryItems[index].id,
+              title: filteredCategoryItems[index].title,
+              imageUrl: filteredCategoryItems[index].imageUrl,
+              duration: filteredCategoryItems[index].duration,
+              affordability: filteredCategoryItems[index].affordability,
+              complexity: filteredCategoryItems[index].complexity,
+            );
           },
           itemCount: filteredCategoryItems.length,
         ));
