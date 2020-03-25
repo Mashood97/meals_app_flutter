@@ -10,6 +10,7 @@ class CategoryMealWidget extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final String mealId;
+  final Function removeItem;
 
   CategoryMealWidget(
       {@required this.mealId,
@@ -17,10 +18,18 @@ class CategoryMealWidget extends StatelessWidget {
       @required this.imageUrl,
       @required this.duration,
       @required this.complexity,
-      @required this.affordability});
+      @required this.affordability,
+      @required this.removeItem});
 
   void selectedMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.routeName,arguments: mealId);
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.routeName, arguments: mealId)
+        .then((result) {
+      if (result != null) {
+        print(result);
+        removeItem(result);
+      }
+    });
   }
 
   String get enumComplexityText {
@@ -55,7 +64,7 @@ class CategoryMealWidget extends StatelessWidget {
       child: Card(
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius:  BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15),
         ),
         margin: const EdgeInsets.all(10),
         child: Column(
