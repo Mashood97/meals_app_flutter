@@ -156,8 +156,8 @@ const DUMMY_MEALS = const [
       'c4',
     ],
     title: 'Wiener Schnitzel',
-    affordability: Affordability.Luxurious,
-    complexity: Complexity.Challenging,
+    affordability: Affordability.Costly,
+    complexity: Complexity.Expert,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
     duration: 60,
@@ -193,7 +193,7 @@ const DUMMY_MEALS = const [
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
-    affordability: Affordability.Luxurious,
+    affordability: Affordability.Costly,
     complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
@@ -295,7 +295,7 @@ const DUMMY_MEALS = const [
     ],
     title: 'Creamy Indian Chicken Curry',
     affordability: Affordability.Pricey,
-    complexity: Complexity.Challenging,
+    complexity: Complexity.Expert,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
     duration: 35,
@@ -378,7 +378,7 @@ const DUMMY_MEALS = const [
       'c10',
     ],
     title: 'Asparagus Salad with Cherry Tomatoes',
-    affordability: Affordability.Luxurious,
+    affordability: Affordability.Costly,
     complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',

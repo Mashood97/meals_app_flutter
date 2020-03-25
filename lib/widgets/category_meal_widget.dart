@@ -30,8 +30,8 @@ class CategoryMealWidget extends StatelessWidget {
     if (complexity == Complexity.Hard) {
       return 'Hard';
     }
-    if (complexity == Complexity.Challenging) {
-      return 'Challenging';
+    if (complexity == Complexity.Expert) {
+      return 'Expert';
     }
   }
 
@@ -42,27 +42,28 @@ class CategoryMealWidget extends StatelessWidget {
     if (affordability == Affordability.Pricey) {
       return 'Pricey';
     }
-    if (affordability == Affordability.Luxurious) {
-      return 'Luxurious';
+    if (affordability == Affordability.Costly) {
+      return 'Costly';
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return InkWell(
       onTap: () => selectedMeal(context),
       child: Card(
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius:  BorderRadius.circular(15),
         ),
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
             Stack(
               children: <Widget>[
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
@@ -95,9 +96,9 @@ class CategoryMealWidget extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   AdaptiveRowWidget(
                     title: '$duration mins',
@@ -140,6 +141,8 @@ class AdaptiveRowWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 18,
           ),
+          softWrap: true,
+          overflow: TextOverflow.clip,
         ),
       ],
     );
