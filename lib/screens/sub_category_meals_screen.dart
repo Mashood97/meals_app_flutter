@@ -68,7 +68,6 @@ class _SubCategoryMealsScreenState extends State<SubCategoryMealsScreen> {
               duration: filteredCategoryItems[index].duration,
               affordability: filteredCategoryItems[index].affordability,
               complexity: filteredCategoryItems[index].complexity,
-              removeItem: removeItemFromList,
             );
           },
           itemCount: filteredCategoryItems.length,

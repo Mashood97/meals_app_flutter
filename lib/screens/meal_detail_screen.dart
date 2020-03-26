@@ -5,6 +5,11 @@ import '../models/dummy_categories.dart';
 class MealDetailScreen extends StatelessWidget {
   static const String routeName = '/meal-detail-screen';
 
+  final Function favMethod;
+  final Function isFav;
+
+  MealDetailScreen(this.favMethod, this.isFav);
+
   Widget headerWidget(BuildContext context, String title) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -133,13 +138,15 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pop(mealid);
-        },
+        onPressed: () => favMethod(mealid),
+//            () {
+////          Navigator.of(context).pop(mealid);
+//        }
+//        ,
         elevation: 4,
         splashColor: Theme.of(context).accentColor,
         child: Icon(
-          Icons.delete,
+          isFav(mealid) ? Icons.star : Icons.star_border,
           color: Colors.white,
         ),
         backgroundColor: Theme.of(context).primaryColor,

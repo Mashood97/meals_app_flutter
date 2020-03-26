@@ -10,26 +10,26 @@ class CategoryMealWidget extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final String mealId;
-  final Function removeItem;
 
-  CategoryMealWidget(
-      {@required this.mealId,
-      @required this.title,
-      @required this.imageUrl,
-      @required this.duration,
-      @required this.complexity,
-      @required this.affordability,
-      @required this.removeItem});
+  CategoryMealWidget({
+    @required this.mealId,
+    @required this.title,
+    @required this.imageUrl,
+    @required this.duration,
+    @required this.complexity,
+    @required this.affordability,
+  });
 
   void selectedMeal(BuildContext context) {
     Navigator.of(context)
-        .pushNamed(MealDetailScreen.routeName, arguments: mealId)
-        .then((result) {
-      if (result != null) {
-        print(result);
-        removeItem(result);
-      }
-    });
+        .pushNamed(MealDetailScreen.routeName, arguments: mealId);
+//        .then((result) {
+//      if (result != null) { //for popping data
+//        print(result);
+//        removeItem(result);
+//      }
+//    }
+//    );
   }
 
   String get enumComplexityText {
