@@ -30,6 +30,8 @@ class CategoryMealWidget extends StatelessWidget {
 //      }
 //    }
 //    );
+
+
   }
 
   String get enumComplexityText {
